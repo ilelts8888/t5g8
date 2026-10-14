@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đề Ôn Tập Tiếng Anh 10 - Test 2 (Green Living - 40 Câu) - Ms Lê Hằng English</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-purple: #7952B3;
+      --primary-coral: #FF5E62;
+      --primary-yellow: #FFD166;
+      --primary-cyan: #06D6A0;
+      --accent-blue: #0984E3;
+      --correct-green: #00BA66;
+      --correct-bg: #E8F8F0;
+      --wrong-red: #FA5252;
+      --wrong-bg: #FFEAEA;
+      --card-bg: #FFFFFF;
+      --text-main: #2D3436;
+      --text-muted: #636E72;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito', 'Quicksand', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #FFEFBA 0%, #FFDFBA 8%, #E3F2FD 35%, #CBE3F7 70%, #A0C4E2 100%);
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
+      color: var(--text-main);
+      padding-bottom: 120px;
+    }
+
+    /* Ambient Skyline & Road Decorations */
+    .city-skyline {
+      position: fixed;
+      bottom: 45px;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.32;
+      background-repeat: repeat-x;
+      background-position: bottom;
+      background-size: 400px 120px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 120' width='400' height='120'%3E%3Cpath fill='%236C8EB5' d='M0,120 L0,60 L20,60 L20,30 L50,30 L50,120 L70,120 L70,45 L100,45 L100,120 L130,120 L130,15 L160,15 L160,120 L190,120 L190,50 L220,50 L220,120 L250,120 L250,25 L280,25 L280,120 L310,120 L310,40 L340,40 L340,120 L370,120 L370,55 L400,55 L400,120 Z'/%3E%3C/svg%3E");
+    }
+
+    .bottom-road {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 46px;
+      background: #4A4A4A;
+      border-top: 6px solid #00BA66;
+      z-index: 1;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+    }
+    .road-curb {
+      position: absolute;
+      top: -12px;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: repeating-linear-gradient(90deg, #FF4757 0px, #FF4757 24px, #FFFFFF 24px, #FFFFFF 48px);
+    }
+    .road-lines {
+      width: 100%;
+      height: 6px;
+      background: repeating-linear-gradient(90deg, #FFFFFF 0px, #FFFFFF 35px, transparent 35px, transparent 70px);
+      opacity: 0.85;
+    }
+
+    /* Floating Clouds */
+    .bg-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .floating-cloud {
+      position: absolute;
+      opacity: 0.45;
+      animation: floatCloud 25s linear infinite;
+    }
+    @keyframes floatCloud {
+      0% { transform: translateX(-150px); }
+      100% { transform: translateX(110vw); }
+    }
+
+    /* Main Container */
+    .app-container {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 16px 14px;
+    }
+
+    /* Top Compact Teacher Announcement Banner */
+    .top-announcement {
+      background: #FFFFFF;
+      border-radius: 30px;
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      margin-bottom: 12px;
+      border: 1.5px solid #FFDEE9;
+    }
+    .announcement-text {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .teacher-badge {
+      background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+      color: #FFF;
+      padding: 3px 12px;
+      border-radius: 18px;
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.3px;
+    }
+
+    /* Header Unit Banner */
+    .unit-hero-card {
+      background: #FFFFFF;
+      border-radius: 28px;
+      padding: 22px 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(116, 185, 255, 0.18);
+      border: 2px solid #E3F2FD;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .unit-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(90deg, #00BA66, #0984E3);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .unit-title {
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: #2D3436;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .unit-subtitle {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #636E72;
+    }
+    .unit-icon-box {
+      width: 90px;
+      height: 90px;
+      flex-shrink: 0;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #E8F8F0, #E0F7FA);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      border: 2px solid #FFFFFF;
+    }
+
+    /* Top Sticky Stats Bar */
+    .top-stats-bar {
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 10px 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      border: 2px solid #FFF0F5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+    .pill-counter-left {
+      background: #FF5E62;
+      color: #FFF;
+      font-weight: 900;
+      font-size: 0.95rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 0 #D63031;
+    }
+    .bar-track {
+      flex: 1;
+      height: 16px;
+      background: #EBF3FA;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      border: 2px solid #E1EDF8;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #FDCB6E, #00D26A);
+      border-radius: 10px;
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .pill-counter-right {
+      background: #00D26A;
+      color: #FFF;
+      font-weight: 900;
+      font-size: 0.95rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 0 #00A853;
+    }
+
+    /* Urgent Reminder Card */
+    .warning-box {
+      background: #FFF9E6;
+      border: 3px dashed #FDCB6E;
+      border-left: 8px solid #F39C12;
+      border-radius: 20px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 18px rgba(243, 156, 18, 0.12);
+    }
+    .warning-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #D35400;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .warning-text {
+      font-size: 0.95rem;
+      color: #4A3E1F;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+    .warning-subtext {
+      margin-top: 6px;
+      font-size: 0.88rem;
+      color: #C0392B;
+      font-weight: 800;
+    }
+
+    /* READING PASSAGE BLOCK */
+    .reading-passage-card {
+      background: #FFFDF8;
+      border: 3px solid #FDCB6E;
+      border-radius: 26px;
+      padding: 24px 26px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 28px rgba(253, 203, 110, 0.25);
+      position: relative;
+    }
+    .passage-header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px dashed #F1C40F;
+    }
+    .passage-title-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #D35400;
+    }
+    .passage-scope-badge {
+      background: #F39C12;
+      color: #FFF;
+      font-size: 0.82rem;
+      font-weight: 900;
+      padding: 4px 14px;
+      border-radius: 14px;
+      box-shadow: 0 2px 0 #D35400;
+    }
+    .passage-intro-text {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: #4B4B4B;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+    .passage-blank {
+      display: inline-block;
+      min-width: 68px;
+      padding: 1px 8px;
+      margin: 0 4px;
+      background: #FFF3CD;
+      border: 1.5px dashed #F39C12;
+      border-radius: 8px;
+      font-weight: 900;
+      color: #D35400;
+      text-align: center;
+    }
+    .passage-prompt-banner {
+      margin-top: 16px;
+      background: linear-gradient(90deg, #00BA66, #0984E3);
+      color: #FFF;
+      padding: 10px 16px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Embedded passage toggle inside question cards */
+    .btn-toggle-passage {
+      background: #EDF2F7;
+      color: #2B6CB0;
+      border: 1.5px solid #CBD5E0;
+      border-radius: 12px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 14px;
+      transition: all 0.2s ease;
+    }
+    .btn-toggle-passage:hover {
+      background: #E2E8F0;
+      border-color: #0984E3;
+      color: #0984E3;
+    }
+    .collapse-passage-box {
+      display: none;
+      background: #FFFDF9;
+      border: 2px dashed #CBD5E0;
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    /* Quiz Card */
+    .quiz-card {
+      background: #FFFFFF;
+      border-radius: 26px;
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 3px solid #F0F4F8;
+      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .quiz-card:hover {
+      box-shadow: 0 14px 38px rgba(116, 185, 255, 0.2);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .q-number-pill {
+      background: #0984E3;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 0.9rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      box-shadow: 0 3px 0 #0767B1;
+    }
+    .q-tag-pill {
+      background: #FFF3E0;
+      color: #E65100;
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 4px 12px;
+      border-radius: 16px;
+      border: 1px solid #FFE0B2;
+    }
+    .q-text {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #2D3436;
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+    .q-text u, .opt-text u {
+      color: #FF3838;
+      font-weight: 900;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 4px;
+    }
+
+    /* 3D Option Buttons */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    @media (min-width: 600px) {
+      .options-grid.grid-2col {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .option-btn {
+      position: relative;
+      background: #FFFFFF;
+      border: 2.5px solid #E2E8F0;
+      border-radius: 18px;
+      padding: 14px 18px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #2D3436;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 5px 0 #CBD5E1;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+    }
+    .option-btn:hover:not(:disabled) {
+      transform: translateY(-2px) scale(1.015);
+      border-color: #0984E3;
+      box-shadow: 0 7px 0 #0767B1;
+      background: #F8FBFE;
+    }
+    .option-btn:active:not(:disabled) {
+      transform: translateY(4px);
+      box-shadow: 0 1px 0 #CBD5E1;
+    }
+    .opt-key {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: #F1F2F6;
+      color: #57606F;
+      font-weight: 900;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    /* Option States */
+    .option-btn.selected-correct {
+      background: #E8F8F0 !important;
+      border-color: var(--correct-green) !important;
+      color: #0E6251 !important;
+      box-shadow: 0 5px 0 #00A853 !important;
+    }
+    .option-btn.selected-correct .opt-key {
+      background: var(--correct-green) !important;
+      color: #FFFFFF !important;
+    }
+
+    .option-btn.selected-wrong {
+      background: #FFEAEA !important;
+      border-color: var(--wrong-red) !important;
+      color: #922B21 !important;
+      box-shadow: 0 5px 0 #D63031 !important;
+      animation: shakeAnim 0.4s ease-in-out;
+    }
+    .option-btn.selected-wrong .opt-key {
+      background: var(--wrong-red) !important;
+      color: #FFFFFF !important;
+    }
+
+    .option-btn.show-truth {
+      border-color: var(--correct-green) !important;
+      background: #F0FFF4 !important;
+      box-shadow: 0 4px 0 #00A853 !important;
+    }
+    .option-btn.show-truth .opt-key {
+      background: #00BA66 !important;
+      color: #FFF !important;
+    }
+
+    @keyframes shakeAnim {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-6px); }
+      80% { transform: translateX(6px); }
+    }
+
+    /* Explanation Container */
+    .explanation-container {
+      display: none;
+      margin-top: 20px;
+      background: #FFFFFF;
+      border: 2px dashed #FFB8B8;
+      border-radius: 22px;
+      padding: 20px;
+      position: relative;
+      animation: slideInDown 0.35s ease;
+      box-shadow: 0 6px 20px rgba(255, 94, 98, 0.08);
+    }
+    @keyframes slideInDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .exp-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #FF5E62;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .exp-trans-box {
+      background: #FFFDF0;
+      border-left: 6px solid #FDCB6E;
+      border-radius: 16px;
+      padding: 12px 18px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2D3436;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(253, 203, 110, 0.15);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .exp-section-title {
+      font-weight: 900;
+      font-size: 1rem;
+      color: #2D3436;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-grid-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    @media (min-width: 620px) {
+      .exp-grid-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .exp-card-item {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 12px 14px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.03);
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+    .exp-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+    .card-word {
+      font-weight: 800;
+      font-size: 1.02rem;
+    }
+    .card-word.word-wrong { color: #0984E3; }
+    .card-word.word-correct { color: #00BA66; }
+
+    .badge-pill {
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 2px 10px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .badge-pill-wrong { background: #F1F2F6; color: #57606F; }
+    .badge-pill-correct { background: #E8F8F0; color: #00A853; border: 1px solid #A3E9C3; }
+    .card-meaning { color: #B33939; font-weight: 700; font-size: 0.88rem; }
+
+    .exp-block {
+      margin-bottom: 14px;
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+    .rule-tag {
+      background: #FFF3CD;
+      color: #856404;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 10px;
+      margin-right: 6px;
+      display: inline-block;
+    }
+    .highlight-green-tag {
+      background: #D4EDDA;
+      color: #155724;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    .wrong-key-pill {
+      background: #FFEAEA;
+      color: #D63031;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 8px;
+      margin-right: 4px;
+      display: inline-block;
+    }
+
+    /* Submit Area */
+    .submit-area {
+      text-align: center;
+      margin: 35px 0 60px 0;
+    }
+    .btn-submit-main {
+      background: #00D26A;
+      color: #FFFFFF;
+      font-size: 1.3rem;
+      font-weight: 900;
+      padding: 16px 48px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 0 #00A853, 0 14px 25px rgba(0, 210, 106, 0.4);
+      transition: all 0.15s ease;
+      letter-spacing: 0.5px;
+    }
+    .btn-submit-main:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 11px 0 #00A853, 0 18px 30px rgba(0, 210, 106, 0.45);
+    }
+    .btn-submit-main:active {
+      transform: translateY(4px);
+      box-shadow: 0 3px 0 #00A853;
+    }
+
+    /* Score Modal Popup */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(45, 52, 54, 0.75);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 16px;
+    }
+    .modal-overlay.active { display: flex; }
+    .score-modal {
+      background: #FFFFFF;
+      width: 100%;
+      max-width: 520px;
+      border-radius: 28px;
+      padding: 30px;
+      text-align: center;
+      border: 4px solid #0984E3;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .modal-trophy { font-size: 4rem; margin-bottom: 10px; }
+    .score-huge { font-size: 3.2rem; font-weight: 900; color: #0984E3; margin: 10px 0; line-height: 1; }
+    .score-fraction { font-size: 1.2rem; color: #636E72; font-weight: 800; }
+    .feedback-box {
+      background: #F8F9FE;
+      border: 2px dashed #0984E3;
+      border-radius: 18px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      text-align: left;
+    }
+    .feedback-teacher {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-weight: 900;
+      color: #0984E3;
+      font-size: 1rem;
+    }
+    .feedback-quote {
+      font-size: 1.02rem;
+      color: #2D3436;
+      line-height: 1.55;
+      font-weight: 700;
+      font-style: italic;
+    }
+    .btn-modal-close {
+      background: #0984E3;
+      color: #FFFFFF;
+      font-size: 1.1rem;
+      font-weight: 800;
+      padding: 14px 34px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 5px 0 #0767B1;
+      transition: all 0.15s ease;
+      margin: 6px;
+    }
+
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10000;
+    }
+
+    @media (max-width: 600px) {
+      .app-container { padding: 10px; }
+      .quiz-card { padding: 18px 14px; }
+      .q-text { font-size: 1.05rem; }
+      .option-btn { font-size: 0.95rem; padding: 12px 14px; }
+      .btn-submit-main { font-size: 1.1rem; padding: 14px 32px; }
+      .unit-title { font-size: 1.3rem; }
+      .reading-passage-card { padding: 16px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="bg-elements" id="bgElements"></div>
+  <div class="city-skyline"></div>
+  <div class="bottom-road">
+    <div class="road-curb"></div>
+    <div class="road-lines"></div>
+  </div>
+
+  <div class="app-container">
+
+    <!-- Top Compact Teacher Announcement Banner -->
+    <div class="top-announcement">
+      <div class="announcement-text">
+        <span>👩‍🏫 Giáo viên tạo: <strong>Ms Lê Hằng English</strong></span>
+        <span class="teacher-badge">Master of English</span>
+      </div>
+      <div style="font-size: 0.82rem; color: #FF5E62; font-weight: 800;">
+        ⚡ ĐỀ CƯƠNG ÔN TẬP LỚP 10 - TEST 2 (40 CÂU)
+      </div>
+    </div>
+
+    <!-- Header Unit Banner -->
+    <div class="unit-hero-card">
+      <div>
+        <div class="unit-badge">
+          <span>🌱 HUMANS AND THE ENVIRONMENT · GREEN LIVING</span>
+        </div>
+        <h1 class="unit-title">Đề Ôn Tập Toàn Diện Unit 1 & Unit 2 (Test 2)</h1>
+        <div class="unit-subtitle">
+          28 Câu Trắc Nghiệm + 12 Câu Tự Luận (Word Form · Sentence Building · Rearrangement)
+        </div>
+      </div>
+      <div class="unit-icon-box">
+        ♻️
+      </div>
+    </div>
+
+    <!-- Top Sticky Bar -->
+    <div class="top-stats-bar">
+      <div class="pill-counter-left">
+        <span>⭐</span>
+        <span id="correctScore">0</span><span>/40</span>
+      </div>
+      <div class="bar-track">
+        <div class="bar-fill" id="progressBar"></div>
+      </div>
+      <div class="pill-counter-right">
+        <span id="answeredCount">0</span><span>/40</span>
+      </div>
+    </div>
+
+    <!-- Urgent Warning Box -->
+    <div class="warning-box">
+      <div class="warning-title">
+        <span>⚠️ LỜI NHẮC CỰC KỲ QUAN TRỌNG ⚠️</span>
+      </div>
+      <div class="warning-text">
+        Chỉ có đọc kỹ giải thích ngay sau mỗi câu, sau đó ghi lại từ vựng/cấu trúc mới vào vở để học thì mới thực sự giỏi lên.
+      </div>
+      <div class="warning-subtext">
+        👉 Làm cho xong mà không đọc giải thích hay đọc qua loa không ghi chép thì chỉ tốn thời gian vô ích!<br>
+        👇 <strong>Kéo tới đâu, làm tới đó! *</strong>
+      </div>
+    </div>
+
+    <!-- Quiz Cards Container -->
+    <div id="quizContainer"></div>
+
+    <!-- Submit Area -->
+    <div class="submit-area">
+      <button class="btn-submit-main" onclick="calculateAndShowResult()">
+        🎉 NỘP BÀI & XEM TỔNG KẾT 🎉
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Score Modal Popup -->
+  <div class="modal-overlay" id="scoreModal">
+    <div class="score-modal">
+      <div class="modal-trophy" id="modalTrophy">🏆</div>
+      <h2 style="color: #2D3436; font-size: 1.5rem; font-weight: 900;">KẾT QUẢ BÀI THI</h2>
+      <div class="score-huge" id="modalPercent">100%</div>
+      <div class="score-fraction" id="modalFraction">Đúng 40 / 40 câu</div>
+
+      <div class="feedback-box">
+        <div class="feedback-teacher">
+          <span>👩‍🏫 Lời nhận xét từ <strong>Ms Lê Hằng English</strong>:</span>
+        </div>
+        <div class="feedback-quote" id="modalTeacherQuote">
+          "Làm tốt lắm, con cố gắng ring điểm 10 ở lần sau nha!"
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <button class="btn-modal-close" onclick="closeModal()">Đóng & Xem lại bài</button>
+        <button class="btn-modal-close" style="background: #00C9A7; box-shadow: 0 5px 0 #009688;" onclick="restartQuiz()">Làm lại bài thi 🔄</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    function playDing() {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const now = audioCtx.currentTime;
+      const osc1 = audioCtx.createOscillator();
+      const gain1 = audioCtx.createGain();
+      osc1.type = 'triangle';
+      osc1.frequency.setValueAtTime(659.25, now);
+      gain1.gain.setValueAtTime(0.25, now);
+      gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+      osc1.connect(gain1);
+      gain1.connect(audioCtx.destination);
+      osc1.start(now);
+      osc1.stop(now + 0.35);
+
+      const osc2 = audioCtx.createOscillator();
+      const gain2 = audioCtx.createGain();
+      osc2.type = 'sine';
+      osc2.frequency.setValueAtTime(987.77, now + 0.1);
+      gain2.gain.setValueAtTime(0.3, now + 0.1);
+      gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+      osc2.connect(gain2);
+      gain2.connect(audioCtx.destination);
+      osc2.start(now + 0.1);
+      osc2.stop(now + 0.6);
+    }
+
+    function playWrongSound() {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const now = audioCtx.currentTime;
+      [320, 260, 210].forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(freq, now + i * 0.14);
+        gain.gain.setValueAtTime(0.2, now + i * 0.14);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + (i + 1) * 0.14);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + i * 0.14);
+        osc.stop(now + (i + 1) * 0.14);
+      });
+    }
+
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    let confettiParticles = [];
+    let isAnimatingConfetti = false;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function triggerConfetti(count = 65) {
+      const colors = ['#0984E3', '#FDCB6E', '#00C9A7', '#00D26A', '#FF4757', '#FF9FF3', '#6C5CE7'];
+      for (let i = 0; i < count; i++) {
+        confettiParticles.push({
+          x: window.innerWidth / 2 + (Math.random() - 0.5) * 320,
+          y: window.innerHeight * 0.35 + (Math.random() - 0.5) * 100,
+          w: Math.random() * 10 + 6,
+          h: Math.random() * 8 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          vx: (Math.random() - 0.5) * 14,
+          vy: Math.random() * -12 - 5,
+          rot: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 12,
+          gravity: 0.35,
+          opacity: 1
+        });
+      }
+      if (!isAnimatingConfetti) animateConfetti();
+    }
+
+    function animateConfetti() {
+      if (confettiParticles.length === 0) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        isAnimatingConfetti = false;
+        return;
+      }
+      isAnimatingConfetti = true;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = confettiParticles.length - 1; i >= 0; i--) {
+        const p = confettiParticles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += p.gravity;
+        p.rot += p.rotSpeed;
+        p.opacity -= 0.012;
+        if (p.opacity <= 0 || p.y > window.innerHeight) {
+          confettiParticles.splice(i, 1);
+          continue;
+        }
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.rot * Math.PI) / 180);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.opacity;
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+      }
+      requestAnimationFrame(animateConfetti);
+    }
+
+    function initBackgroundElements() {
+      const container = document.getElementById('bgElements');
+      const cloudSvg = '<svg width="120" height="70" viewBox="0 0 24 24" fill="%23FFFFFF"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>';
+      for (let i = 0; i < 4; i++) {
+        const cloud = document.createElement('div');
+        cloud.className = 'floating-cloud';
+        cloud.style.top = `${12 + i * 20}%`;
+        cloud.style.animationDuration = `${24 + i * 8}s`;
+        cloud.style.animationDelay = `${i * 6}s`;
+        cloud.innerHTML = cloudSvg;
+        container.appendChild(cloud);
+      }
+    }
+
+    /* DATA: PASSAGES & 40 QUESTIONS */
+    const passagesData = {
+      "recycle_ad": {
+        "title": "HELP REDUCE YOUR CARBON FOOTPRINT! RECYCLE NOW!",
+        "badge": "THÔNG BÁO / QUẢNG CÁO (CÂU 9 - 11)",
+        "intro": "Read the following advertisement/school announcement and mark the letter A, B, C, or D on your answer sheet to indicate the correct option that best fits each of the numbered blanks:",
+        "content": "<div style=\"background: #F8FAFC; border-radius: 16px; padding: 20px 24px; border: 2px solid #E2E8F0; line-height: 1.85; font-size: 1.06rem; color: #2D3436;\"><div style=\"text-align: center; font-weight: 900; font-size: 1.3rem; color: #00BA66; margin-bottom: 12px;\">♻️ Help Reduce Your Carbon Footprint! Recycle now! ♻️</div><p style=\"font-weight: 800; color: #D35400;\">WHY?</p><ul style=\"margin-left: 22px; margin-bottom: 10px;\"><li>Recycling glass reduces <span class=\"passage-blank\">(9) ______</span> waste.</li><li>Reusing glass means less landfill waste.</li></ul><p style=\"font-weight: 800; color: #0984E3;\">HOW?</p><ul style=\"margin-left: 22px; margin-bottom: 12px;\"><li>Bring your glass bottles and jars <span class=\"passage-blank\">(10) ______</span> our recycling center.</li><li>Clean up your glass items before dropping them off.</li><li>Get rewarded! Earn <span class=\"passage-blank\">(11) ______</span> small money reward for every kilogram of glass recycle.</li></ul><div style=\"text-align: center; font-weight: 900; color: #2D3436;\">🌍 Let's work together for a greener future! 🌍</div></div>"
+      },
+      "green_living_cloze": {
+        "title": "GREEN LIVING & SUSTAINABLE HABITS",
+        "badge": "ĐIỀN TỪ ĐOẠN VĂN (CÂU 19 - 23)",
+        "intro": "Read the following passage and mark the letter A, B, C, or D to indicate the correct word or phrase that best fits each of the numbered blanks:",
+        "content": "<div style=\"background: #F8FAFC; border-radius: 16px; padding: 20px 24px; border: 2px solid #E2E8F0; line-height: 1.9; font-size: 1.06rem; text-align: justify; color: #2D3436;\"><p style=\"margin-bottom: 12px;\">The world is experiencing the negative impacts of climate change, largely due to our reliance <span class=\"passage-blank\">(19) ______</span> fossil fuels and unsustainable habits. Green living offers a path to reduce these effects by adopting a more sustainable lifestyle <span class=\"passage-blank\">(20) ______</span> is a necessary practice to ensure the health of our planet and future generations.</p><p style=\"margin-bottom: 12px;\">As you walkthrough the rooms of your home or visit your local market, you may notice <span class=\"passage-blank\">(21) ______</span> increasing number of eco-friendly <span class=\"passage-blank\">(22) ______</span> to traditional products and practices. From planting your own food in your yard to discovering the benefits of electric cars, there are a variety of ways for you to have a greener, more sustainable way of living.</p><p>Starting green living begins with becoming aware of your consumption habits, from the food you eat to the clothes you wear, and <span class=\"passage-blank\">(23) ______</span> a conscious effort to reduce waste and choose eco-friendly options. Joining a community of individuals who share the same interests can provide inspiration, support, and practical tips for making sustainable choices.</p></div>"
+      },
+      "greener_living_reading": {
+        "title": "WHY IS GREEN LIVING SO IMPORTANT?",
+        "badge": "ĐỌC HIỂU ĐOẠN VĂN (CÂU 24 - 28)",
+        "intro": "Read the following passage and mark the letter A, B, C or D to indicate the correct answer to each of the questions:",
+        "content": "<div style=\"background: #F8FAFC; border-radius: 16px; padding: 20px 24px; border: 2px solid #E2E8F0; line-height: 1.9; font-size: 1.06rem; text-align: justify; color: #2D3436;\"><p style=\"margin-bottom: 12px;\">Many people go through life only thinking about their own well-being and that of those around them. In reality, the well-being of the environment is just as important in certain ways. Without a healthy and sustainable environment, their own health and ability to leave behind a sustainable planet to those who live after them is negatively affected. Therefore, two main environmental benefits can be realised with greener living.</p><p style=\"margin-bottom: 12px;\">Firstly, people can conserve natural resources. The natural resources that man has been enjoying are beginning to disappear. Due to population growth, it is estimated that the use of natural resources has more than tripled since 1970. At that rate, it is not difficult to see how these same resources will eventually become <b style=\"color: #D63031; background: #FFEAEA; padding: 2px 6px; border-radius: 6px;\">depleted</b>. It is important to conserve those precious resources so that others after this generation can enjoy the same quality of living on this planet.</p><p>Secondly, people can reduce the harmful effects of climate change. Primarily due to human’s reliance on fossil fuels over the years, climate change is a real concern. People continue to release carbon dioxide into the atmosphere, further polluting the air. <b style=\"color: #0984E3; background: #EBF3FA; padding: 2px 6px; border-radius: 6px;\">This</b> is leading to dramatic changes in temperatures that need to be stopped. Greener living aims to do exactly that. For every person who makes an effort to reduce his or her carbon footprint in the world, climate change can begin to become less of a concern over time.</p></div>"
+      }
+    };
+
+    function makeQ(id, tag, qText, opts, cor, trans, rule, whyCor, notes, subtext = "", passage_key = "", is_first_in_passage = "") {
+      const keys = ["A", "B", "C", "D"];
+      const options = opts.map((t, idx) => ({ key: keys[idx], text: t }));
+      const analysis = opts.map((t, idx) => ({
+        word: `${keys[idx]}. ${t.replace(/<[^>]*>/g, '').slice(0, 38)}`,
+        badge: keys[idx] === cor ? "Đáp án chuẩn" : "Phương án nhiễu",
+        badgeType: keys[idx] === cor ? "correct" : "wrong",
+        note: notes[idx]
+      }));
+      const whyWrong = [];
+      opts.forEach((t, idx) => {
+        if (keys[idx] !== cor) {
+          whyWrong.push({
+            word: `${keys[idx]}. ${t.replace(/<[^>]*>/g, '').slice(0, 34)}`,
+            reason: notes[idx]
+          });
+        }
+      });
+      return { id, type: tag, question: qText, subtext, options, correct: cor, trans, analysis, whyCorrect: { rule, content: whyCor }, whyWrong, passage_key, is_first_in_passage };
+    }
+
+    const quizData = [
+      makeQ(1, "Ngữ âm (Pronunciation - Đuôi -ed)", "Question 1: Find the word which has a different sound in the part underlined:", ["announc<u>ed</u>", "evaluat<u>ed</u>", "enunciat<u>ed</u>", "demand<u>ed</u>"], "A", "Dịch: Tìm từ có phần gạch chân đuôi -ed phát âm khác với ba từ còn lại.", "Quy tắc phát âm đuôi -ed:", "Từ <span class='highlight-green-tag'>announced</span> (/əˈnaʊnst/) kết thúc bằng âm vô thanh <b>/s/</b> nên đuôi -ed phát âm là <b>/t/</b>. Ba từ còn lại kết thúc bằng âm /t/ và /d/ nên đuôi -ed đều phát âm là <b>/ɪd/</b>.", ["/əˈnaʊnst/ - tận cùng là âm /s/ → phát âm là /t/", "/ɪˈvæljueɪtɪd/ - tận cùng là /t/ → phát âm là /ɪd/", "/ɪˈnʌnsieɪtɪd/ - tận cùng là /t/ → phát âm là /ɪd/", "/dɪˈmɑːndɪd/ - tận cùng là /d/ → phát âm là /ɪd/"], "A. announc<u>ed</u> &nbsp;&nbsp;&nbsp; B. evaluat<u>ed</u> &nbsp;&nbsp;&nbsp; C. enunciat<u>ed</u> &nbsp;&nbsp;&nbsp; D. demand<u>ed</u>"),
+      makeQ(2, "Ngữ âm (Pronunciation - Nguyên âm 'i')", "Question 2: Find the word which has a different sound in the part underlined:", ["l<u>i</u>tter", "<u>i</u>ssue", "dev<u>i</u>ce", "p<u>i</u>ck"], "C", "Dịch: Tìm từ có phần gạch chân chữ 'i' phát âm khác với ba từ còn lại.", "Quy tắc phát âm nguyên âm 'i':", "Từ <span class='highlight-green-tag'>device</span> (/dɪˈvaɪs/) có chữ 'i' phát âm là nguyên âm đôi <b>/aɪ/</b>. Ba từ còn lại 'litter', 'issue', 'pick' đều phát âm là âm ngắn <b>/ɪ/</b>.", ["/ˈlɪtər/ (rác thải) - phát âm là /ɪ/", "/ˈɪʃuː/ (vấn đề) - phát âm là /ɪ/", "/dɪˈvaɪs/ (thiết bị) - phát âm là /aɪ/", "/pɪk/ (nhặt) - phát âm là /ɪ/"], "A. l<u>i</u>tter &nbsp;&nbsp;&nbsp; B. <u>i</u>ssue &nbsp;&nbsp;&nbsp; C. dev<u>i</u>ce &nbsp;&nbsp;&nbsp; D. p<u>i</u>ck"),
+      makeQ(3, "Giới từ đi kèm tính từ (Prepositions)", "Question 3: In the UK, poor air quality is responsible ______ some 40,000 deaths each year.", ["to", "for", "in", "with"], "B", "Dịch: Tại Vương quốc Anh, chất lượng không khí kém là nguyên nhân gây ra khoảng 40.000 ca tử vong mỗi năm.", "Cấu trúc 'be responsible for sth':", "Tính từ <b>responsible</b> đi kèm giới từ <span class='highlight-green-tag'>for</span> mang nghĩa chịu trách nhiệm cho hoặc là nguyên nhân gây ra điều gì.", ["responsible to sb: chịu trách nhiệm trước ai (cấp trên)", "be responsible for sth: là nguyên nhân gây ra điều gì", "sai giới từ", "sai giới từ"]),
+      makeQ(4, "Từ loại (Word Form)", "Question 4: Using energy-efficient ______ appliances can help protect the environment and save money.", ["electricity", "electric", "electrify", "electrical"], "D", "Dịch: Sử dụng các thiết bị điện tiết kiệm năng lượng có thể giúp bảo vệ môi trường và tiết kiệm tiền bạc.", "Cụm danh từ cố định 'electrical appliances':", "Khi nói chung về <b>các thiết bị điện gia dụng</b> trong nhà, tiếng Anh luôn dùng tính từ <span class='highlight-green-tag'>electrical</span> (<i>electrical appliances</i>).", ["electricity (n): điện năng", "electric (adj): dùng cho tên 1 vật cụ thể chạy bằng điện (electric car, electric guitar)", "electrify (v): điện khí hóa", "electrical appliances: các thiết bị điện gia dụng nói chung"]),
+      makeQ(5, "Câu bị động với Modal Verb (Modal Passive)", "Question 5: Recycling should ______ by everyone to reduce the impact on the environment.", ["be practised", "practise", "attract", "be attracted"], "A", "Dịch: Việc tái chế nên được thực hiện bởi tất cả mọi người để giảm thiểu tác động lên môi trường.", "Cấu trúc bị động 'should + be + V3/ed':", "Chủ ngữ là vật (<b>Recycling</b>) và có cụm tác nhân <b>by everyone</b> phía sau nên bắt buộc chia ở dạng bị động: <span class='highlight-green-tag'>be practised</span> (được thực hành/thực hiện).", ["should be practised: nên được thực hiện (bị động chuẩn)", "practise: chủ động", "attract: thu hút (sai nghĩa và chủ động)", "be attracted: được thu hút (sai nghĩa)"]),
+      makeQ(6, "Thì Tương Lai Đơn (Will vs Be going to)", "Question 6: I think I ______ my paper and cardboard to help save trees.", ["recycle", "am going to recycle", "will recycle", "am recycling"], "C", "Dịch: Tôi nghĩ tôi sẽ tái chế giấy và bìa cứng của mình để giúp bảo vệ cây xanh.", "Dấu hiệu 'I think + S + will + V':", "Khi đưa ra quyết định tại thời điểm nói hoặc nêu suy nghĩ bắt đầu bằng <b>I think</b>, ta dùng thì Tương lai đơn: <span class='highlight-green-tag'>will recycle</span>.", ["hiện tại đơn", "be going to dùng cho kế hoạch đã dự tính từ trước khi nói", "I think + will V: chuẩn ngữ pháp", "hiện tại tiếp diễn"]),
+      makeQ(7, "Kết hợp từ (Collocations)", "Question 7: More people ______ a green lifestyle because it is good for the environment.", ["adopt", "conclude", "compose", "create"], "A", "Dịch: Ngày càng có nhiều người áp dụng/theo đuổi lối sống xanh vì nó tốt cho môi trường.", "Collocation trọng tâm Unit 2 'adopt a green lifestyle':", "Cụm từ cố định bắt buộc ghi nhớ: <span class='highlight-green-tag'>adopt a green lifestyle</span> = bắt đầu áp dụng, theo đuổi lối sống xanh.", ["adopt a green lifestyle: áp dụng lối sống xanh", "conclude: kết luận", "compose: sáng tác", "create: tạo ra"]),
+      makeQ(8, "Cụm động từ (Phrasal Verbs)", "Question 8: Household appliances should be ______ to save energy and avoid dangerous situations.", ["turned off", "turned on", "turned up", "turned down"], "A", "Dịch: Các thiết bị điện gia dụng nên được tắt đi để tiết kiệm năng lượng và tránh các tình huống nguy hiểm.", "Phrasal verb 'turn off' (tắt thiết bị):", "Để tiết kiệm điện (save energy) và tránh nguy hiểm cháy nổ, thiết bị phải được tắt đi: <span class='highlight-green-tag'>turned off</span>.", ["turned off: tắt đi", "turned on: bật lên (tốn điện)", "turned up: vặn to lên", "turned down: vặn nhỏ lại"]),
+      makeQ(9, "Từ vựng thông báo (Cloze Announcement)", "Question 9 (Recycle Now!): Recycling glass reduces (9)______ waste.", ["house", "household", "housing", "home"], "B", "Dịch: Tái chế thủy tinh giúp làm giảm lượng rác thải sinh hoạt gia đình.", "Cụm danh từ 'household waste':", "Cụm từ cố định chỉ rác thải sinh hoạt từ các hộ gia đình là <span class='highlight-green-tag'>household waste</span>.", ["house: ngôi nhà", "household waste: rác thải sinh hoạt hộ gia đình", "housing: nhà ở", "home: tổ ấm"], "", "recycle_ad", "recycle_ad"),
+      makeQ(10, "Giới từ (Prepositions)", "Question 10: Bring your glass bottles and jars (10)______ our recycling center.", ["in", "at", "for", "to"], "D", "Dịch: Hãy mang chai lọ thủy tinh của bạn đến trung tâm tái chế của chúng tôi.", "Cấu trúc 'bring something TO somewhere':", "Mang đồ vật <b>đến</b> một địa điểm nào đó dùng giới từ chỉ hướng chuyển động <span class='highlight-green-tag'>to</span>.", ["in: ở trong", "at: tại", "for: cho", "bring sth to somewhere: mang cái gì đến đâu"], "", "recycle_ad"),
+      makeQ(11, "Mạo từ (Articles)", "Question 11: Get rewarded! Earn (11)______ small money reward for every kilogram of glass recycle.", ["the", "an", "a", "no article"], "C", "Dịch: Nhận thưởng ngay! Kiếm một khoản tiền thưởng nhỏ cho mỗi ki-lô-gam thủy tinh tái chế.", "Mạo từ không xác định 'a' trước cụm danh từ đếm được số ít:", "Danh từ chính là <b>reward</b> (một phần thưởng - đếm được số ít), đứng trước là tính từ <b>small</b> bắt đầu bằng phụ âm /s/ nên dùng mạo từ <span class='highlight-green-tag'>a</span> (<i>a small money reward</i>).", ["the: chưa xác định cụ thể", "an: small bắt đầu bằng phụ âm /s/", "a small money reward: một phần thưởng tiền nhỏ", "no article: thiếu mạo từ cho danh từ số ít reward"], "", "recycle_ad"),
+      makeQ(12, "Sắp xếp đoạn văn (Paragraph Arrangement)", "Question 12: Mark the letter A, B, C, or D to indicate the correct arrangement of the sentences to make a meaningful paragraph:", ["e-a-d-b-c", "e-b-a-d-c", "e-b-a-c-d", "b-a-c-e-d"], "D", "Dịch: Sắp xếp các câu để tạo thành đoạn văn hoàn chỉnh về 3 việc nên làm để cải thiện môi trường trường học.", "Cấu trúc đoạn văn liệt kê luận điểm:", "1. Câu chủ đề (<b>b</b>: <i>There are three things we can do...</i>)<br>2. Ý thứ nhất (<b>a</b>: <i>Firstly, we should clean up...</i>)<br>3. Ý thứ hai (<b>c</b>: <i>Secondly, we ought to set up...</i>)<br>4. Ý cuối cùng (<b>e</b>: <i>Finally, we should plant more trees...</i>)<br>5. Câu kết luận (<b>d</b>: <i>In conclusion...</i>).<br>Thứ tự đúng: <span class='highlight-green-tag'>b - a - c - e - d</span>.", ["đặt Finally (e) lên đầu là sai", "đặt Finally (e) lên đầu là sai", "đặt Finally (e) lên đầu là sai", "b - a - c - e - d: chuẩn xác 100%"], "<b>a.</b> Firstly, we should clean up all areas regularly. For example, we can organise clean-up activities at weekends.<br><b>b.</b> There are three things we can do to improve the environment in our school.<br><b>c.</b> Secondly, we ought to set up more rubbish bins. For instance, we can put more rubbish bins in the school gate, in front of each building, or in the playground.<br><b>d.</b> In conclusion, we can improve the environment in our school in many ways and even small actions can make a big difference.<br><b>e.</b> Finally, we should plant more trees. To give an example, we can encourage students to plant trees or flowers in our school because this reduces CO2 and makes the air clean."),
+      makeQ(13, "Sắp xếp hội thoại (Dialogue Arrangement)", "Question 13: Mark the letter A, B, C, or D to indicate the correct arrangement of the sentences to make a meaningful dialogue:", ["a-c-b", "b-a-c", "b-c-a", "a-b-c"], "B", "Dịch: Sắp xếp cuộc trò chuyện giữa Minh và Lan về cách giảm căng thẳng khi ôn thi.", "Mạch hội thoại Chia sẻ vấn đề → Đồng cảm & Khuyên → Đáp lại:", "1. <b>b. Minh:</b> Tớ cảm thấy căng thẳng quá với việc ôn tập. Tớ không thể tập trung nổi nữa.<br>2. <b>a. Lan:</b> Tớ cũng vậy (Same here). Tớ đã bắt đầu nghỉ giải lao ngắn và đi dạo—nó thực sự hiệu quả đấy.<br>3. <b>c. Minh:</b> Nghe hay đấy. Tối nay tớ sẽ thử sau khi học xong.<br>Thứ tự đúng: <span class='highlight-green-tag'>b - a - c</span>.", ["a-c-b: Same here (Tớ cũng vậy) không thể đứng mở đầu", "b-a-c: chuẩn mạch đối đáp tự nhiên", "b-c-a: Minh tự khen chính câu than phiền của mình là sai", "a-b-c: sai câu mở đầu"], "<b>a. Lan:</b> Same here. I started taking short breaks and going for a walk—it really helps.<br><b>b. Minh:</b> I feel so stressed with all the revision. I can't focus anymore.<br><b>c. Minh:</b> That sounds good. I'll try that tonight after studying."),
+      makeQ(14, "Sắp xếp bức thư (Letter Arrangement)", "Question 14: Mark the letter A, B, C, or D to indicate the correct arrangement of the sentences to make a meaningful letter (Dear Mum, ... Love, Huy):", ["b-a-e-d-c", "e-a-b-c-d", "b-e-c-a-d", "b-a-e-c-d"], "B", "Dịch: Sắp xếp bức thư của Huy gửi Mẹ kể về cuộc sống tại trường nội trú.", "Mạch bức thư Giới thiệu bối cảnh → Khó khăn học tập → Nỗi nhớ nhà → Lo lắng → Mong sự ủng hộ:", "1. <b>e:</b> Con đã ở trường nội trú được vài tháng rồi, và khối lượng bài vở nặng hơn nhiều so với con nghĩ.<br>2. <b>a:</b> Cảm giác như số lượng bài tập và bài kiểm tra là không thể chịu nổi và làm con lo lắng hầu hết các ngày.<br>3. <b>b:</b> Con nhớ nhà và cảm thấy áp lực phải học tập, tham gia câu lạc bộ và kết bạn cùng lúc.<br>4. <b>c:</b> Đôi khi con lo mình làm chưa đủ tốt...<br>5. <b>d:</b> Xin mẹ biết rằng con yêu ngôi trường này, nhưng con cần sự thấu hiểu và động viên của mẹ.<br>Thứ tự đúng: <span class='highlight-green-tag'>e - a - b - c - d</span>.", ["b-a-e-d-c: câu giới thiệu bối cảnh 'I have been here for a few months' (e) phải đứng đầu", "e-a-b-c-d: chuẩn bố cục từ giới thiệu hoàn cảnh đến chi tiết và lời kết", "b-e-c-a-d: sai vị trí mở đầu", "b-a-e-c-d: sai vị trí câu mở đầu e"], "<b>Dear Mum,</b><br><b>a.</b> It feels like the number of assignments and tests is “unbearable” and makes me anxious most days.<br><b>b.</b> I miss home and feel under pressure to study, join clubs, and make friends all at once.<br><b>c.</b> Sometimes, I worry that I am not doing well enough, and it is hurting my focus and happiness.<br><b>d.</b> Please know that I love this school, but I need your understanding and support so I can manage better.<br><b>e.</b> I have been here at boarding school for a few months, and the workload is much more intense than I expected.<br><b>Love, Huy</b>"),
+      makeQ(15, "Từ đồng nghĩa (CLOSEST in meaning)", "Question 15: Mark the letter A, B, C, or D to indicate the word(s) CLOSEST in meaning to the underlined word(s):<br>It's not difficult to reduce your carbon footprint. You can do it by making your daily activities <u>eco-friendly</u>.", ["climate-friendly", "unfriendly", "kindly", "environmentally-friendly"], "D", "Dịch: Không khó để giảm dấu chân carbon của bạn. Bạn có thể làm điều đó bằng cách biến các hoạt động hàng ngày trở nên thân thiện với môi trường.", "Từ đồng nghĩa 'eco-friendly = environmentally-friendly':", "Tiền tố <b>eco-</b> (ecology: sinh thái/môi trường) hoàn toàn đồng nghĩa với <span class='highlight-green-tag'>environmentally-friendly</span> (thân thiện với môi trường).", ["climate-friendly: chỉ giới hạn ở khí hậu", "unfriendly: không thân thiện (trái nghĩa)", "kindly: tử tế", "environmentally-friendly = eco-friendly (thân thiện với môi trường)"]),
+      makeQ(16, "Từ đồng nghĩa (CLOSEST in meaning)", "Question 16: Mark the letter A, B, C, or D to indicate the word(s) CLOSEST in meaning to the underlined word(s):<br>Walking or cycling are activities that can help reduce your carbon footprint and your <u>impact</u> on the environment.", ["influence", "consequence", "effect", "circumstance"], "C", "Dịch: Đi bộ hoặc đạp xe là những hoạt động có thể giúp giảm lượng khí thải carbon và tác động của bạn lên môi trường.", "Cấu trúc đồng nghĩa 'impact on = effect on':", "Danh từ <b>impact (on sth)</b> (sự tác động, ảnh hưởng lên cái gì) đồng nghĩa trực tiếp nhất với <span class='highlight-green-tag'>effect</span>.", ["influence: tầm ảnh hưởng (thường dùng cho người/tư tưởng)", "consequence: hậu quả (đi với of)", "effect (on sth) = impact (on sth): tác động, ảnh hưởng", "circumstance: hoàn cảnh"]),
+      makeQ(17, "Từ trái nghĩa (OPPOSITE in meaning)", "Question 17: Mark the letter A, B, C, or D to indicate the word(s) OPPOSITE in meaning to the underlined word(s):<br>Small changes in your daily habits can help <u>reduce</u> the carbon footprint you produce.", ["lower", "increase", "rise", "improve"], "B", "Dịch: Những thay đổi nhỏ trong thói quen hàng ngày của bạn có thể giúp làm giảm lượng khí thải carbon bạn tạo ra.", "Ngoại động từ trái nghĩa với 'reduce' (làm giảm):", "Động từ <b>reduce</b> là ngoại động từ (làm giảm cái gì). Từ trái nghĩa trực tiếp cũng phải là một ngoại động từ nhận tân ngữ 'the carbon footprint': <span class='highlight-green-tag'>increase</span> (làm tăng lên).", ["lower: làm giảm (đồng nghĩa)", "increase: làm tăng lên (ngoại động từ trái nghĩa chuẩn)", "rise: tự tăng lên (nội động từ, không có tân ngữ theo sau)", "improve: cải thiện"]),
+      makeQ(18, "Từ trái nghĩa (OPPOSITE in meaning)", "Question 18: Mark the letter A, B, C, or D to indicate the word(s) OPPOSITE in meaning to the underlined word(s):<br>Organic methods help reduce the use of <u>harmful</u> chemicals in food, which is better for our health.", ["fortunate", "profitable", "favorable", "helpful"], "D", "Dịch: Các phương pháp hữu cơ giúp giảm việc sử dụng các hóa chất độc hại trong thực phẩm, điều này tốt hơn cho sức khỏe của chúng ta.", "Cặp tính từ trái nghĩa 'harmful >< helpful':", "Tính từ <b>harmful</b> nghĩa là có hại, độc hại. Từ trái nghĩa trực tiếp là <span class='highlight-green-tag'>helpful</span> (có ích, có lợi).", ["fortunate: may mắn", "profitable: sinh lời", "favorable: thuận lợi", "helpful: có ích, có lợi (trái nghĩa với harmful)"]),
+      makeQ(19, "Giới từ (Cloze Passage)", "Question 19 (Green Living Passage): The world is experiencing the negative impacts of climate change, largely due to our reliance (19)______ fossil fuels and unsustainable habits.", ["in", "on", "from", "at"], "B", "Dịch: Thế giới đang phải hứng chịu những tác động tiêu cực của biến đổi khí hậu, phần lớn là do sự phụ thuộc của chúng ta vào nhiên liệu hóa thạch...", "Cấu trúc 'reliance on sth':", "Danh từ <b>reliance</b> (xuất phát từ động từ <i>rely on</i>) luôn đi kèm giới từ <span class='highlight-green-tag'>on</span> (sự phụ thuộc vào cái gì).", ["sai giới từ", "reliance on sth: sự phụ thuộc vào cái gì", "sai giới từ", "sai giới từ"], "", "green_living_cloze", "green_living_cloze"),
+      makeQ(20, "Đại từ quan hệ (Relative Pronouns)", "Question 20: Green living offers a path to reduce these effects by adopting a more sustainable lifestyle (20)______ is a necessary practice to ensure the health of our planet...", ["when", "who", "which", "whom"], "C", "Dịch: Lối sống xanh mở ra con đường giảm thiểu những tác động này bằng cách áp dụng một lối sống bền vững hơn, điều mà là một thói quen cần thiết để đảm bảo sức khỏe cho hành tinh...", "Đại từ quan hệ làm chủ ngữ chỉ vật:", "Thay thế cho cụm danh từ chỉ vật/khái niệm đứng trước (<i>a more sustainable lifestyle</i>) và làm chủ ngữ cho động từ <b>is</b> là đại từ quan hệ <span class='highlight-green-tag'>which</span>.", ["when: trạng từ thời gian", "who: chỉ người", "which: thay cho vật/việc làm chủ ngữ cho 'is'", "whom: tân ngữ chỉ người"], "", "green_living_cloze"),
+      makeQ(21, "Mạo từ (Articles)", "Question 21: ...you may notice (21)______ increasing number of eco-friendly...", ["an", "the", "a", "zero article"], "A", "Dịch: ...bạn có thể nhận thấy một số lượng ngày càng tăng các giải pháp thay thế thân thiện với môi trường...", "Cấu trúc 'an increasing number of + N số nhiều':", "Cụm từ chỉ số lượng <i>a number of</i> khi chèn thêm tính từ <b>increasing</b> (bắt đầu bằng nguyên âm /ɪ/) sẽ chuyển mạo từ 'a' thành <span class='highlight-green-tag'>an</span> (<i>an increasing number of...</i>).", ["an increasing number of: một số lượng ngày càng tăng", "the: không phù hợp ngữ cảnh giới thiệu", "a: không đứng trước nguyên âm /ɪ/ của increasing", "thiếu mạo từ"], "", "green_living_cloze"),
+      makeQ(22, "Từ vựng (Vocabulary)", "Question 22: ...you may notice an increasing number of eco-friendly (22)______ to traditional products and practices.", ["living", "energy", "supplies", "alternatives"], "D", "Dịch: ...bạn có thể nhận thấy ngày càng nhiều các giải pháp/sự lựa chọn thay thế thân thiện với môi trường cho các sản phẩm và thói quen truyền thống.", "Cấu trúc 'alternatives to sth':", "Đi với giới từ <b>to</b> phía sau (<i>...to traditional products</i>) và đứng sau <i>an increasing number of</i> (cần danh từ đếm được số nhiều) chính là <span class='highlight-green-tag'>alternatives</span> (các giải pháp/sản phẩm thay thế).", ["living: không đếm được", "energy: không đếm được", "supplies: nguồn cung (không đi với to traditional products)", "alternatives to sth: các giải pháp/lựa chọn thay thế cho cái gì"], "", "green_living_cloze"),
+      makeQ(23, "Kết hợp từ (Collocations)", "Question 23: Starting green living begins with becoming aware of your consumption habits... and (23)______ a conscious effort to reduce waste...", ["getting", "taking", "making", "doing"], "C", "Dịch: Bắt đầu lối sống xanh khởi nguồn từ việc nhận thức về thói quen tiêu dùng... và thực hiện một nỗ lực có ý thức nhằm giảm thiểu rác thải...", "Collocation 'make an effort':", "Cụm từ cố định: <span class='highlight-green-tag'>make an effort / make a conscious effort</span> = nỗ lực, cố gắng có ý thức (chia dạng V-ing <i>making</i> song hành với <i>becoming</i>).", ["không dùng get an effort", "không dùng take an effort", "making a conscious effort: nỗ lực có ý thức", "không dùng do an effort"], "", "green_living_cloze"),
+      makeQ(24, "Đọc hiểu - Tiêu đề bài đọc (Reading Comprehension)", "Question 24 (Greener Living Reading): Which of the following can be the best title for the passage?", ["Natural Resources", "The Benefits of Green Living", "The Effects of Climate Change", "A Healthy Environment"], "B", "Dịch: Tiêu đề nào sau đây là phù hợp nhất cho toàn bộ bài đọc?", "Xác định câu chủ đề toàn bài (Thesis Statement):", "Câu cuối đoạn 1 nêu rõ định hướng toàn bài: <i>'Therefore, <b>two main environmental benefits can be realised with greener living</b>'</i>, sau đó đoạn 2 (Firstly) và đoạn 3 (Secondly) phân tích 2 lợi ích đó. Tiêu đề chuẩn xác nhất là: <span class='highlight-green-tag'>The Benefits of Green Living</span>.", ["Natural Resources: chỉ xuất hiện ở đoạn 2", "The Benefits of Green Living: bao quát toàn bộ bài đọc", "The Effects of Climate Change: chỉ xuất hiện ở đoạn 3", "A Healthy Environment: chỉ là chi tiết đoạn 1"], "", "greener_living_reading", "greener_living_reading"),
+      makeQ(25, "Đọc hiểu - Từ trái nghĩa (OPPOSITE in meaning)", "Question 25: The word “<u>depleted</u>” in paragraph 2 is opposite in meaning to ______.", ["run out", "picked up", "filled in", "searched for"], "C", "Dịch: Từ “depleted” (bị cạn kiệt, vơi cạn) ở đoạn 2 TRÁI NGHĨA với từ nào?", "Tìm từ trái nghĩa trong ngữ cảnh:", "Từ <b>depleted</b> nghĩa là bị cạn kiệt, rút cạn hết (đồng nghĩa với <i>run out</i>). Trong 4 đáp án của đề, từ mang nghĩa ngược lại (được làm đầy lại/lấp đầy) là <span class='highlight-green-tag'>filled in</span>.", ["run out: cạn kiệt (đồng nghĩa với depleted)", "picked up: nhặt lên", "filled in: được làm đầy / bổ sung đầy (trái nghĩa với cạn kiệt)", "searched for: tìm kiếm"], "", "greener_living_reading"),
+      makeQ(26, "Đọc hiểu - Từ quy chiếu (Reference Word)", "Question 26: The word “<u>This</u>” in paragraph 3 refers to ______.", ["the activity of releasing carbon dioxide and causing air pollution", "the harmful effect of climate change", "the reliance on fossil fuels", "green living"], "A", "Dịch: Từ “This” ở đoạn 3 quy chiếu cho điều gì?", "Đối chiếu câu đứng liền trước:", "Câu liền trước viết: <i>'People continue to release carbon dioxide into the atmosphere, further polluting the air. <b>This</b> is leading to dramatic changes in temperatures...'</i> → Đại từ <b>This</b> thay thế cho toàn bộ hành động xả khí CO2 và gây ô nhiễm không khí ở câu trước: <span class='highlight-green-tag'>the activity of releasing carbon dioxide and causing air pollution</span>.", ["khớp chính xác 100% với câu đứng liền trước", "nằm ở đầu đoạn 3", "nằm ở câu thứ 2 đoạn 3", "nằm ở câu phía sau"], "", "greener_living_reading"),
+      makeQ(27, "Đọc hiểu - Chi tiết bài đọc (Detail Question)", "Question 27: According to paragraph 2, natural resources ______.", ["are not precious to human on Earth", "are hard to be conserved", "has been used more and more since 1970s", "can not disappear"], "C", "Dịch: Theo đoạn 2, tài nguyên thiên nhiên ______.", "Dẫn chứng trực tiếp đoạn 2:", "Đoạn 2 viết: <i>'Due to population growth, it is estimated that <b>the use of natural resources has more than tripled since 1970</b>.'</i> (Việc sử dụng tài nguyên đã tăng gấp hơn 3 lần kể từ năm 1970) → Đồng nghĩa với <span class='highlight-green-tag'>has been used more and more since 1970s</span>.", ["sai vì bài nói 'precious resources'", "bài không nói khó bảo tồn", "được sử dụng ngày càng nhiều từ thập niên 1970 (tăng gấp 3 lần)", "sai vì bài nói 'beginning to disappear'"], "", "greener_living_reading"),
+      makeQ(28, "Đọc hiểu - Nhận định sai (NOT TRUE Question)", "Question 28: Which of the following is NOT TRUE according to the passage?", ["The well-being of the environment is as important as that of each person", "Climate change is a problem because of the reliance on fossil fuels", "Carbon dioxide contributes to air pollution", "Climate change can only be stopped by actions of governments"], "D", "Dịch: Điều nào sau đây là KHÔNG ĐÚNG theo bài đọc?", "Loại trừ và đối chiếu câu cuối bài:", "Câu cuối bài viết: <i>'For <b>every person</b> who makes an effort to reduce his or her carbon footprint in the world, climate change can begin to become less of a concern'</i> (Mỗi cá nhân nỗ lực đều giúp đẩy lùi biến đổi khí hậu). Do đó nhận định nói chỉ có chính phủ mới ngăn chặn được (<span class='highlight-green-tag'>only be stopped by actions of governments</span>) là hoàn toàn **SAI**.", ["đúng theo đoạn 1 (just as important)", "đúng theo đoạn 3 (Primarily due to human's reliance on fossil fuels)", "đúng theo đoạn 3 (release CO2, further polluting the air)", "THÔNG TIN SAI vì mỗi cá nhân đều có thể góp sức, bài không hề nói chỉ nhờ chính phủ"], "", "greener_living_reading"),
+
+      /* ==================== II. PHẦN TỰ LUẬN (CÂU 29 - 40 / TỰ LUẬN 1 - 12) ==================== */
+      makeQ(29, "Tự luận Câu 1 - Dựng câu hoàn chỉnh (Sentence Building)", "Question 29 (II. TỰ LUẬN - Question 1): Use the verbs in their correct forms and add some words where necessary:<br><b>You / turn / appliances / when / in use / save / energy.</b>", [
+        "You should turn off household appliances when they are not in use to save energy.",
+        "You turn on appliances when in use saving energy.",
+        "You should turning off appliances when they are in use to save energy.",
+        "You must turned off appliances when not in use for save energy."
+      ], "A", "Dịch: Bạn nên tắt các thiết bị gia dụng khi chúng không được sử dụng để tiết kiệm năng lượng.", "Cấu trúc 'should turn off sth when (they are) not in use to save energy':", "Câu khuyên bảo tiết kiệm năng lượng chuẩn trong Unit 2:<br>• Thêm modal verb khuyên nhủ: <b>should turn off (your/household) appliances</b>.<br>• Mệnh đề thời gian: <b>when they are not in use</b> (khi không sử dụng - đề gợi ý rút gọn 'when / in use' cần thêm phủ định 'not' để hợp nghĩa tắt thiết bị tiết kiệm điện).<br>• Chỉ mục đích: <b>to save energy</b>.<br>Đáp án chuẩn: <span class='highlight-green-tag'>You should turn off household appliances when they are not in use to save energy.</span>", ["chuẩn ngữ pháp và ngữ nghĩa Unit 2", "turn on (bật) khi đang dùng thì không tiết kiệm điện và sai ngữ pháp saving", "sau should phải là V nguyên thể", "sau must không dùng V-ed và sau for không dùng V nguyên thể"]),
+      makeQ(30, "Tự luận Câu 2 - Dựng câu hoàn chỉnh (Sentence Building)", "Question 30 (Tự luận - Question 2): Use the verbs in their correct forms and add some words where necessary:<br><b>Cut / plastic / products / reduce / plastic pollution.</b>", [
+        "Cutting down on plastic products helps reduce plastic pollution.",
+        "Cut plastic products reduce plastic pollution.",
+        "Cutting down plastic products to reducing plastic pollution.",
+        "To cut down on plastic products reducing plastic pollution."
+      ], "A", "Dịch: Việc cắt giảm các sản phẩm nhựa giúp làm giảm ô nhiễm rác thải nhựa.", "Danh động từ làm chủ ngữ 'Cutting down on sth + V số ít':", "Cụm động từ <b>cut down on</b> (cắt giảm) khi đứng đầu câu làm chủ ngữ sẽ chuyển thành <b>Cutting down on plastic products</b> + động từ chia số ít <b>helps (to) reduce / can reduce plastic pollution</b>.<br>Đáp án chuẩn: <span class='highlight-green-tag'>Cutting down on plastic products helps reduce plastic pollution.</span>", ["chuẩn cấu trúc Gerund làm chủ ngữ và cụm cut down on", "hai động từ nguyên thể đứng liền nhau thiếu liên kết ngữ pháp", "thiếu động từ chính của câu", "thiếu động từ chính chia thì"]),
+      makeQ(31, "Tự luận Câu 3 - Dựng câu bị động (Passive Sentence Building)", "Question 31 (Tự luận - Question 3): Use the verbs in their correct forms and add some words where necessary:<br><b>Green / living / be / adopt / people / world.</b>", [
+        "Green living is adopted by more and more people around the world.",
+        "Green living be adopted by people in world.",
+        "Green living is adopting by people all over the world.",
+        "Green living are adopted with people in the world."
+      ], "A", "Dịch: Lối sống xanh đang được áp dụng bởi ngày càng nhiều người trên khắp thế giới.", "Câu bị động với chủ ngữ 'Green living':", "Chủ ngữ <b>Green living</b> (số ít) + bị động <b>is adopted / has been adopted</b> + <b>by (more and more) people</b> + <b>all over / around / in the world</b>.<br>Đáp án chuẩn: <span class='highlight-green-tag'>Green living is adopted by more and more people around the world.</span>", ["chuẩn cấu trúc bị động be + V3/ed + by O", "chưa chia động từ to be", "is adopting là dạng chủ động tiếp diễn", "Green living là số ít không dùng are"]),
+      makeQ(32, "Tự luận Câu 4 - Dựng câu hoàn chỉnh (Sentence Building)", "Question 32 (Tự luận - Question 4): Use the verbs in their correct forms and add some words where necessary:<br><b>Parents / have / teach / their children / be honest and show respect to older people / an early age.</b>", [
+        "Parents have to teach their children to be honest and show respect to older people from an early age.",
+        "Parents have teach their children be honest and show respect to older people at an early age.",
+        "Parents has to teach their children to be honest and showing respect to older people at an early age.",
+        "Parents have to teaching their children to be honest and show respect to older people from an early age."
+      ], "A", "Dịch: Cha mẹ phải dạy con cái sống trung thực và biết kính trọng người lớn tuổi ngay từ khi còn nhỏ.", "Cấu trúc 'have to teach sb to V ... from/at an early age':", "1. Nghĩa vụ: <b>Parents have to teach their children</b>.<br>2. Cấu trúc dạy ai làm gì: <b>teach + O + to-V</b> → <b>to be honest and show respect to older people</b>.<br>3. Cụm giới từ chỉ độ tuổi: <b>from an early age / at an early age</b> (từ khi còn nhỏ).<br>Đáp án chuẩn: <span class='highlight-green-tag'>Parents have to teach their children to be honest and show respect to older people from (hoặc at) an early age.</span>", ["chuẩn 100% cấu trúc ngữ pháp", "thiếu giới từ 'to' sau have và sau their children", "Parents là số nhiều không dùng 'has'", "sau 'have to' phải là V nguyên thể"]),
+      makeQ(33, "Tự luận Câu 5 - Từ loại (Word Form)", "Question 33 (Tự luận - Question 5): Complete the sentence with the correct form of the word in capitals:<br>What are the ______ benefits for our country as a member of this international organization? <b>(ECONOMY)</b>", [
+        "economic",
+        "economical",
+        "economist",
+        "economically"
+      ], "A", "Dịch: Những lợi ích về mặt kinh tế đối với đất nước chúng ta khi là thành viên của tổ chức quốc tế này là gì?", "Phân biệt 'economic' (thuộc nền kinh tế) và 'economical' (tiết kiệm):", "Đứng trước danh từ <b>benefits</b> (lợi ích), ta cần tính từ mang nghĩa 'thuộc về kinh tế/thương mại': <span class='highlight-green-tag'>economic</span> (<i>economic benefits</i>: lợi ích kinh tế).", ["economic (adj): thuộc về kinh tế (economic benefits: lợi ích kinh tế)", "economical (adj): tiết kiệm, ít tốn kém", "economist (n): nhà kinh tế học", "economically (adv): trạng từ"]),
+      makeQ(34, "Tự luận Câu 6 - Từ loại (Word Form)", "Question 34 (Tự luận - Question 6): Complete the sentence with the correct form of the word in capitals:<br>I would like to express my ______ to everyone for their hard work. <b>(GRATEFUL)</b>", [
+        "gratitude",
+        "gratefully",
+        "gratefulness",
+        "ungrateful"
+      ], "A", "Dịch: Tôi muốn bày tỏ lòng biết ơn của mình tới tất cả mọi người vì sự làm việc chăm chỉ của họ.", "Cụm từ cố định 'express one's gratitude to sb':", "Sau tính từ sở hữu <b>my</b> cần một danh từ. Từ tính từ <b>grateful</b> chuyển sang danh từ chuẩn học thuật là <span class='highlight-green-tag'>gratitude</span> (<i>express my gratitude</i>: bày tỏ lòng biết ơn).", ["gratitude (n): lòng biết ơn (express one's gratitude)", "gratefully (adv): trạng từ", "gratitude là danh từ chuẩn mực trong chương trình SGK Lớp 10", "ungrateful (adj): vô ơn"]),
+      makeQ(35, "Tự luận Câu 7 - Từ loại (Word Form)", "Question 35 (Tự luận - Question 7): Complete the sentence with the correct form of the word in capitals:<br>He needs all the support and ______ he can get. <b>(ENCOURAGE)</b>", [
+        "encouragement",
+        "encouraging",
+        "encouraged",
+        "encourages"
+      ], "A", "Dịch: Anh ấy cần tất cả sự ủng hộ và sự khích lệ/động viên mà anh ấy có thể nhận được.", "Cấu trúc song hành danh từ 'support and encouragement':", "Sau mạo từ <i>the</i> và nối với danh từ <b>support</b> bởi liên từ <b>and</b>, ta cần một danh từ: <b>encourage</b> (v) + <b>-ment</b> → <span class='highlight-green-tag'>encouragement</span> (sự khích lệ, động viên).", ["encouragement (n): sự khích lệ, động viên", "encouraging (adj): mang tính khích lệ", "encouraged (adj/V-ed): được khích lệ", "encourages (v): động từ chia ngôi thứ 3 số ít"]),
+      makeQ(36, "Tự luận Câu 8 - Từ loại (Word Form)", "Question 36 (Tự luận - Question 8): Complete the sentence with the correct form of the word in capitals:<br>To be fair, we need to divide the tasks ______. <b>(EQUAL)</b>", [
+        "equally",
+        "equality",
+        "unequal",
+        "equalize"
+      ], "A", "Dịch: Để công bằng, chúng ta cần phân chia các công việc một cách đồng đều.", "Trạng từ bổ nghĩa cho động từ 'divide':", "Đứng sau cụm động từ thường <b>divide the tasks</b> (phân chia nhiệm vụ), ta cần một trạng từ chỉ cách thức: <b>equal</b> (adj) + <b>-ly</b> → <span class='highlight-green-tag'>equally</span> (một cách công bằng, đều nhau).", ["equally (adv): một cách đồng đều, công bằng", "equality (n): sự bình đẳng", "unequal (adj): không công bằng", "equalize (v): làm cân bằng"]),
+      makeQ(37, "Tự luận Câu 9 - Sắp xếp câu (Sentence Rearrangement)", "Question 37 (Tự luận - Question 9): Rearrange the words/phrases to make a meaningful sentence:<br><b>is / at the moment. / The / improving / financial / company's / situation /</b>", [
+        "The company's financial situation is improving at the moment.",
+        "The financial company's situation is improving at the moment.",
+        "The company's situation financial is at the moment improving.",
+        "At the moment is improving the company's financial situation."
+      ], "A", "Dịch: Tình hình tài chính của công ty đang được cải thiện vào lúc này.", "Trật tự cụm chủ ngữ có sở hữu cách & Thì Hiện tại tiếp diễn:", "1. Chủ ngữ: <b>The company's</b> (sở hữu cách) + <b>financial</b> (tính từ) + <b>situation</b> (danh từ chính: tình hình tài chính của công ty).<br>2. Vị ngữ Hiện tại tiếp diễn: <b>is improving</b> (đang cải thiện).<br>3. Trạng từ thời gian: <b>at the moment.</b><br>Đáp án chuẩn: <span class='highlight-green-tag'>The company's financial situation is improving at the moment.</span>", ["chuẩn ngữ pháp 100%", "đặt financial trước company's làm đổi nghĩa thành 'công ty tài chính'", "sai vị trí tính từ financial", "đảo ngữ sai ngữ pháp"]),
+      makeQ(38, "Tự luận Câu 10 - Sắp xếp câu (Sentence Rearrangement)", "Question 38 (Tự luận - Question 10): Rearrange the words/phrases to make a meaningful sentence:<br><b>retiring / Linda / is / of / thinking / early / she / anymore. / because / isn't / happy / at work</b>", [
+        "Linda is thinking of retiring early because she isn't happy at work anymore.",
+        "Linda is thinking early of retiring because she isn't happy anymore at work.",
+        "Linda thinking of is retiring early because she isn't happy at work anymore.",
+        "Because Linda isn't happy at work, she is retiring of thinking early anymore."
+      ], "A", "Dịch: Linda đang nghĩ đến việc nghỉ hưu sớm bởi vì cô ấy không còn cảm thấy hạnh phúc ở nơi làm việc nữa.", "Cấu trúc 'be thinking of + V-ing' và 'not ... anymore':", "1. Mệnh đề chính: <b>Linda is thinking of retiring early</b> (Linda đang nghĩ tới việc nghỉ hưu sớm).<br>2. Mệnh đề nguyên nhân: <b>because she isn't happy at work anymore.</b> (không còn vui vẻ với công việc nữa).<br>Đáp án chuẩn: <span class='highlight-green-tag'>Linda is thinking of retiring early because she isn't happy at work anymore.</span>", ["chuẩn cấu trúc ngữ pháp", "sai vị trí trạng từ early", "sai vị trí động từ to be 'is'", "sai cấu trúc thinking of retiring"]),
+      makeQ(39, "Tự luận Câu 11 - Sắp xếp câu (Sentence Rearrangement)", "Question 39 (Tự luận - Question 11): Rearrange the words/phrases to make a meaningful sentence:<br><b>oil supplies / Some experts / say / will / the next 20 years. / start / to fall / within / that /</b>", [
+        "Some experts say that oil supplies will start to fall within the next 20 years.",
+        "Some experts say that within the next 20 years will oil supplies start to fall.",
+        "Some experts will say that oil supplies start to fall within the next 20 years.",
+        "Oil supplies say that some experts will start to fall within the next 20 years."
+      ], "A", "Dịch: Một số chuyên gia cho rằng nguồn cung dầu mỏ sẽ bắt đầu sụt giảm trong vòng 20 năm tới.", "Cấu trúc mệnh đề danh từ 'say that + S + will + V':", "1. Mệnh đề tường thuật: <b>Some experts say that</b> (Một số chuyên gia nói rằng).<br>2. Chủ ngữ mệnh đề phụ: <b>oil supplies</b> (nguồn cung dầu mỏ).<br>3. Vị ngữ tương lai đơn: <b>will start to fall</b> (sẽ bắt đầu giảm xuống).<br>4. Trạng ngữ thời gian: <b>within the next 20 years.</b> (trong vòng 20 năm tới).<br>Đáp án chuẩn: <span class='highlight-green-tag'>Some experts say that oil supplies will start to fall within the next 20 years.</span>", ["chuẩn trật tự câu phức", "đảo trợ động từ will trong câu trần thuật là sai", "gắn will vào say làm sai nghĩa dự đoán", "đảo ngược chủ ngữ khiến câu vô nghĩa"]),
+      makeQ(40, "Tự luận Câu 12 - Sắp xếp câu bị động (Passive Sentence Rearrangement)", "Question 40 (Tự luận - Question 12): Rearrange the words/phrases to make a meaningful sentence:<br><b>achievements / in / information / technology / and / will / made / be / scientists. / More / by</b>", [
+        "More achievements in information and technology will be made by scientists.",
+        "More achievements will made be in information and technology by scientists.",
+        "Scientists will be made more achievements in information and technology by.",
+        "More information and technology in achievements will be made by scientists."
+      ], "A", "Dịch: Nhiều thành tựu hơn nữa trong lĩnh vực thông tin và công nghệ sẽ được tạo ra bởi các nhà khoa học.", "Câu bị động thì Tương lai đơn 'will + be + V3/ed + by O':", "1. Cụm chủ ngữ: <b>More achievements in information and technology</b> (Nhiều thành tựu hơn trong lĩnh vực thông tin và công nghệ).<br>2. Động từ bị động tương lai: <b>will be made</b> (collocation: <i>make achievements</i> → bị động: <i>achievements will be made</i>).<br>3. Tác nhân hành động: <b>by scientists.</b><br>Đáp án chuẩn: <span class='highlight-green-tag'>More achievements in information and technology will be made by scientists.</span>", ["chuẩn cấu trúc bị động Tương lai đơn", "sai trật tự 'will made be' (phải là will be made)", "sai chủ ngữ bị động và thừa giới từ by ở cuối", "đảo ngược danh từ chính achievements"])
+    ];
+
+    const userAnswers = {};
+
+    function togglePassageView(qId) {
+      const el = document.getElementById('collapse_pass_' + qId);
+      const btn = document.getElementById('btn_toggle_' + qId);
+      if (el) {
+        if (el.style.display === 'block') {
+          el.style.display = 'none';
+          if (btn) btn.innerHTML = '📖 Xem lại đoạn văn bài đọc';
+        } else {
+          el.style.display = 'block';
+          if (btn) btn.innerHTML = '▲ Thu gọn đoạn văn bài đọc';
+        }
+      }
+    }
+
+    function renderQuiz() {
+      const container = document.getElementById('quizContainer');
+      container.innerHTML = '';
+
+      quizData.forEach((q) => {
+        if (q.is_first_in_passage && passagesData[q.is_first_in_passage]) {
+          const pass = passagesData[q.is_first_in_passage];
+          const passCard = document.createElement('div');
+          passCard.className = 'reading-passage-card';
+          passCard.id = 'passage_anchor_' + q.is_first_in_passage;
+          passCard.innerHTML = `
+            <div class="passage-header-top">
+              <div class="passage-title-badge">
+                <span>📖</span>
+                <span>${pass.title}</span>
+              </div>
+              <span class="passage-scope-badge">${pass.badge}</span>
+            </div>
+            <div class="passage-intro-text">
+              📌 ${pass.intro}
+            </div>
+            ${pass.content}
+            <div class="passage-prompt-banner">
+              <span>👉</span>
+              <span>Đọc kỹ đoạn văn phía trên và lần lượt chọn đáp án cho các câu hỏi theo thứ tự bên dưới:</span>
+            </div>
+          `;
+          container.appendChild(passCard);
+        }
+
+        const card = document.createElement('div');
+        card.className = 'quiz-card';
+        card.id = `qCard_${q.id}`;
+
+        let quickPassageHtml = '';
+        if (q.passage_key && passagesData[q.passage_key]) {
+          quickPassageHtml = `
+            <div>
+              <button class="btn-toggle-passage" id="btn_toggle_${q.id}" onclick="togglePassageView(${q.id})">
+                📖 Xem lại đoạn văn bài đọc
+              </button>
+              <div class="collapse-passage-box" id="collapse_pass_${q.id}">
+                <div style="font-weight:900; color:#D35400; margin-bottom:8px;">📖 ${passagesData[q.passage_key].title}:</div>
+                ${passagesData[q.passage_key].content}
+              </div>
+            </div>
+          `;
+        }
+
+        let optionsHtml = '';
+        q.options.forEach(opt => {
+          optionsHtml += `
+            <button class="option-btn" id="opt_${q.id}_${opt.key}" onclick="handleSelect(${q.id}, '${opt.key}')">
+              <span class="opt-key">${opt.key}</span>
+              <span class="opt-text">${opt.text}</span>
+            </button>
+          `;
+        });
+
+        let cardsHtml = '';
+        q.analysis.forEach(item => {
+          const isCorrect = item.badgeType === 'correct';
+          cardsHtml += `
+            <div class="exp-card-item">
+              <div class="exp-card-header">
+                <span class="card-word ${isCorrect ? 'word-correct' : 'word-wrong'}">${item.word}</span>
+                <span class="badge-pill ${isCorrect ? 'badge-pill-correct' : 'badge-pill-wrong'}">${item.badge}</span>
+              </div>
+              <div class="card-meaning">${item.note}</div>
+            </div>
+          `;
+        });
+
+        let whyWrongHtml = '';
+        q.whyWrong.forEach(item => {
+          whyWrongHtml += `
+            <div style="margin-bottom: 6px;">
+              <span class="wrong-key-pill">${item.word}</span> – ${item.reason}
+            </div>
+          `;
+        });
+
+        card.innerHTML = `
+          <div class="card-top">
+            <span class="q-number-pill">Câu ${q.id} / 40</span>
+            <span class="q-tag-pill">${q.type}</span>
+          </div>
+          <div class="q-text">
+            ${q.question}
+            ${q.subtext ? `<div style="margin-top: 8px; color: #333; background: #F8F9FA; padding: 10px 14px; border-radius: 12px; border-left: 4px solid #0984E3;">${q.subtext}</div>` : ''}
+          </div>
+          ${quickPassageHtml}
+          <div class="options-grid ${q.options.length === 4 ? 'grid-2col' : ''}">
+            ${optionsHtml}
+          </div>
+
+          <div class="explanation-container" id="exp_${q.id}">
+            <div class="exp-title-row">
+              <span>⚡ GIẢI THÍCH CHI TIẾT</span>
+            </div>
+            <div class="exp-trans-box">
+              <span style="font-size: 1.2rem;">💬</span>
+              <div>${q.trans}</div>
+            </div>
+            <div class="exp-section-title">
+              <span>1. Phân tích 4 đáp án:</span>
+            </div>
+            <div class="exp-grid-cards">
+              ${cardsHtml}
+            </div>
+            <div class="exp-block">
+              <div style="font-weight: 900; color: #00BA66; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                <span>2. ✅ TẠI SAO ĐÚNG?</span>
+                <span class="rule-tag">${q.whyCorrect.rule}</span>
+              </div>
+              <div style="color: #2D3436; padding-left: 22px;">
+                ${q.whyCorrect.content}
+              </div>
+            </div>
+            <div class="exp-block" style="margin-bottom: 0;">
+              <div style="font-weight: 900; color: #FF4757; margin-bottom: 4px;">
+                <span>3. ❌ TẠI SAO SAI?</span>
+              </div>
+              <div style="color: #4A4A4A; padding-left: 22px;">
+                ${whyWrongHtml}
+              </div>
+            </div>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function handleSelect(questionId, selectedKey) {
+      const q = quizData.find(item => item.id === questionId);
+      if (!q) return;
+
+      userAnswers[questionId] = selectedKey;
+      const isCorrect = selectedKey === q.correct;
+
+      q.options.forEach(opt => {
+        const btn = document.getElementById(`opt_${q.id}_${opt.key}`);
+        if (!btn) return;
+        btn.classList.remove('selected-correct', 'selected-wrong', 'show-truth');
+
+        if (opt.key === selectedKey) {
+          btn.classList.add(isCorrect ? 'selected-correct' : 'selected-wrong');
+        } else if (opt.key === q.correct) {
+          btn.classList.add('show-truth');
+        }
+      });
+
+      if (isCorrect) {
+        playDing();
+        triggerConfetti(45);
+      } else {
+        playWrongSound();
+      }
+
+      const expBox = document.getElementById(`exp_${q.id}`);
+      if (expBox) expBox.style.display = 'block';
+
+      updateTopStats();
+    }
+
+    function updateTopStats() {
+      let correct = 0;
+      let totalAnswered = 0;
+
+      quizData.forEach(q => {
+        if (userAnswers[q.id] !== undefined) {
+          totalAnswered++;
+          if (userAnswers[q.id] === q.correct) correct++;
+        }
+      });
+
+      document.getElementById('correctScore').textContent = correct;
+      document.getElementById('answeredCount').textContent = totalAnswered;
+
+      const pct = (totalAnswered / quizData.length) * 100;
+      document.getElementById('progressBar').style.width = `${pct}%`;
+    }
+
+    function calculateAndShowResult() {
+      let correct = 0;
+      const total = quizData.length;
+
+      quizData.forEach(q => {
+        if (userAnswers[q.id] === q.correct) correct++;
+      });
+
+      const percentage = Math.round((correct / total) * 100);
+      document.getElementById('modalPercent').textContent = `${percentage}%`;
+      document.getElementById('modalFraction').textContent = `Đúng ${correct} / ${total} câu`;
+
+      const teacherQuoteEl = document.getElementById('modalTeacherQuote');
+      const trophyEl = document.getElementById('modalTrophy');
+
+      if (percentage < 50) {
+        trophyEl.textContent = '🌱';
+        teacherQuoteEl.textContent = '“Điểm lần này chưa cao lắm, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!”';
+      } else if (percentage >= 50 && percentage < 90) {
+        trophyEl.textContent = '🌟';
+        teacherQuoteEl.textContent = '“Con đã có tiến bộ khá ổn rồi, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!”';
+      } else {
+        trophyEl.textContent = '🏆';
+        teacherQuoteEl.textContent = '“Làm tốt lắm, con cố gắng ring điểm 10 ở lần sau nha!”';
+        triggerConfetti(120);
+      }
+
+      document.getElementById('scoreModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('scoreModal').classList.remove('active');
+    }
+
+    function restartQuiz() {
+      for (const k in userAnswers) delete userAnswers[k];
+      closeModal();
+      renderQuiz();
+      updateTopStats();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function initAppNow() {
+      initBackgroundElements();
+      renderQuiz();
+      updateTopStats();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAppNow);
+    } else {
+      initAppNow();
+    }
+  </script>
+</body>
+</html>
